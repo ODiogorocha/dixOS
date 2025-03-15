@@ -26,11 +26,11 @@ O **FerroRaw** é uma ferramenta que pode ser utilizada para emular ou testar a 
 Este repositório contém os arquivos necessários para desenvolver um sistema operacional básico. A estrutura do diretório é a seguinte:
 
 ```
-/src                # Código-fonte em Assembly
+/src                 # Código-fonte em Assembly
     /kernel.asm      # Kernel do sistema operacional
     /boot.asm        # Código de inicialização do sistema (Bootloader)
     /utils.asm       # Funções auxiliares e utilitários
-/iso                 # Imagem ISO do sistema operacional
+/DiskImage           # Imagem ISO do sistema operacional
 /README.md           # Este arquivo
 ```
 
