@@ -1,110 +1,117 @@
-# README - Desenvolvimento de um Sistema Operacional em Assembly para Pendrive
+# [README] Development of an Operating System in Assembly for USB Drive
 
-## 📚 **Visão Geral**
-Este projeto tem como objetivo o desenvolvimento de um sistema operacional simples em **Assembly**, que será carregado diretamente em um **pendrive**. O processo de criação permite o treino de programação, com foco na arquitetura de sistemas operacionais, e oferece uma compreensão profunda sobre a interação entre o hardware e o software a um nível baixo.
+[Read in English](#readme---development-of-an-operating-system-in-assembly-for-usb-drive) | [Leia em Português](#readme---desenvolvimento-de-um-sistema-operacional-em-assembly-para-pendrive)
 
-Usaremos ferramentas como **Rufus**, **NASM**, e **FerroRaw** para compilar e carregar o sistema operacional, com o intuito de adquirir conhecimento e experiência no desenvolvimento de sistemas operacionais e na programação em baixo nível.
+## Overview
+This project aims to develop a simple operating system in **Assembly**, which will be loaded directly onto a **USB drive**. The creation process allows programming training, focusing on operating system architecture, and offers a deep understanding of the interaction between hardware and software at a low level.
 
-## 🛠 **Ferramentas Utilizadas**
+We will use tools like **Rufus**, **NASM**, and **FerroRaw** to compile and load the operating system, intending to acquire knowledge and experience in operating system development and low-level programming.
 
-### 1. **NASM (Netwide Assembler)**
-O **NASM** é um assembler para a linguagem de baixo nível, utilizado para escrever o código do sistema operacional. Ele permite que programadores criem sistemas rápidos e eficientes para arquiteturas como x86. Neste projeto, o NASM será responsável pela tradução de código Assembly para código de máquina que será executado pelo processador.
+## Tools Used
 
-- **Website oficial**: [https://www.nasm.us/](https://www.nasm.us/)
+### 1. NASM (Netwide Assembler)
+**NASM** is an assembler for low-level language, used to write the operating system code. It allows programmers to create fast and efficient systems for architectures like x86. In this project, NASM will be responsible for translating Assembly code into machine code that will be executed by the processor.
 
-### 2. **Rufus**
-O **Rufus** é uma ferramenta gratuita e fácil de usar que permite criar discos USB inicializáveis. Ele será usado para gravar a imagem do sistema operacional no pendrive, tornando-o inicializável em qualquer máquina.
+- **Official website**: [https://www.nasm.us/](https://www.nasm.us/)
 
-- **Website oficial**: [https://rufus.ie/](https://rufus.ie/)
+### 2. Rufus
+**Rufus** is a free and easy-to-use tool that allows the creation of bootable USB drives. It will be used to write the operating system image to the USB drive, making it bootable on any machine.
 
-### 3. **FerroRaw**
-O **FerroRaw** é uma ferramenta que pode ser utilizada para emular ou testar a imagem do sistema operacional em um ambiente controlado antes de realizar a gravação no pendrive. Esta ferramenta ajuda a depurar e validar o sistema operacional em desenvolvimento.
+- **Official website**: [https://rufus.ie/](https://rufus.ie/)
 
-- **Website oficial**: [https://www.fergoraw.com/](https://www.fergoraw.com/)
+### 3. FerroRaw
+**FerroRaw** is a tool that can be used to emulate or test the operating system image in a controlled environment before writing it to the USB drive. This tool helps debug and validate the operating system under development.
 
-## 📂 **Estrutura do Projeto**
-Este repositório contém os arquivos necessários para desenvolver um sistema operacional básico. A estrutura do diretório é a seguinte:
+- **Official website**: [https://www.fergoraw.com/](https://www.fergoraw.com/)
+
+## Project Structure
+This repository contains the necessary files to develop a basic operating system. The directory structure is as follows:
 
 ```
-/src                 # Código-fonte em Assembly
-    /kernel.asm      # Kernel do sistema operacional
-    /boot.asm        # Código de inicialização do sistema (Bootloader)
-    /utils.asm       # Funções auxiliares e utilitários
-/DiskImage           # Imagem ISO do sistema operacional
-/README.md           # Este arquivo
+/src                 # Assembly source code
+    /kernel.asm      # Operating system kernel
+    /boot.asm        # System bootloader code
+    /utils.asm       # Auxiliary functions and utilities
+/DiskImage           # Operating system ISO image
+/README.md           # This file
 ```
 
-## 🚀 **Passos para Desenvolver o Sistema Operacional**
+## Steps to Develop the Operating System
 
-### **1. Preparação do Ambiente de Desenvolvimento**
+### 1. Setting Up the Development Environment
 
-- **Instale o NASM**: Baixe e instale o NASM no seu sistema. O NASM será utilizado para compilar o código Assembly em código de máquina.
-  - Para **Windows**, baixe a versão compatível no [site oficial do NASM](https://www.nasm.us/).
-  - Para **Linux**, você pode instalar através do comando:
+- **Install NASM**: Download and install NASM on your system. NASM will be used to compile Assembly code into machine code.
+  - For **Windows**, download the compatible version from the [NASM official site](https://www.nasm.us/).
+  - For **Linux**, you can install it using the command:
     ```bash
     sudo apt-get install nasm
     ```
 
-- **Baixe o Rufus**: O Rufus será usado para criar um disco USB inicializável. Faça o download do Rufus no [site oficial](https://rufus.ie/).
+- **Download Rufus**: Rufus will be used to create a bootable USB drive. Download Rufus from the [official website](https://rufus.ie/).
 
-- **Instale o FerroRaw**: Se necessário, baixe o FerroRaw para testar a imagem do sistema operacional antes de gravá-la no pendrive.
+- **Install FerroRaw**: If needed, download FerroRaw to test the operating system image before writing it to the USB drive.
 
 ---
 
-### **2. Desenvolvimento do Sistema Operacional**
+### 2. Developing the Operating System
 
-1. **Escreva o código Assembly**:  
-   No diretório **/src**, você desenvolverá o código do sistema operacional. O arquivo **kernel.asm** será o núcleo do sistema, enquanto o **boot.asm** será o código do carregador de inicialização (bootloader), responsável por carregar o kernel no processo de inicialização do sistema.
+1. **Write the Assembly code**:  
+   In the **/src** directory, you will develop the operating system code. The **kernel.asm** file will be the core of the system, while **boot.asm** will be the bootloader code, responsible for loading the kernel during the system boot process.
 
-2. **Compile o código**:
-   Após escrever o código em Assembly, utilize o **NASM** para compilar os arquivos `.asm` para o formato binário. Execute o seguinte comando para compilar:
+2. **Compile the code**:  
+   After writing the Assembly code, use **NASM** to compile the `.asm` files into binary format. Run the following command to compile:
    ```bash
    nasm -f bin -o kernel.bin kernel.asm
    ```
 
-   Este comando gerará o arquivo binário **kernel.bin** que será carregado durante a inicialização do sistema operacional.
+   This command will generate the **kernel.bin** binary file, which will be loaded during the operating system boot.
 
-3. **Criação de uma Imagem ISO**:
-   Após compilar o código, crie uma imagem ISO do sistema operacional com o seguinte comando (ou utilize ferramentas específicas para gerar a ISO):
+3. **Creating an ISO Image**:  
+   After compiling the code, create an ISO image of the operating system using the following command (or use specific tools to generate the ISO):
    ```bash
-   genisoimage -o sistema.iso -b boot.img -no-emul-boot -boot-load-size 4 -boot-info-table /iso
+   genisoimage -o system.iso -b boot.img -no-emul-boot -boot-load-size 4 -boot-info-table /iso
    ```
 
-   Esta imagem ISO será usada para gravar o sistema operacional no pendrive.
+   This ISO image will be used to write the operating system to the USB drive.
 
 ---
 
-### **3. Gravação no Pendrive com Rufus**
+### 3. Writing to the USB Drive with Rufus
 
-1. Abra o **Rufus** e insira o pendrive no computador.
-2. No **Rufus**, selecione a **imagem ISO** do seu sistema operacional.
-3. Escolha a opção de **Sistema de Arquivos FAT32** e **Crie um disco de inicialização com a imagem ISO**.
-4. Clique em **Iniciar** para criar o pendrive inicializável com o sistema operacional.
+1. Open **Rufus** and insert the USB drive into your computer.
+2. In **Rufus**, select the **ISO image** of your operating system.
+3. Choose the **FAT32 File System** option and **Create a bootable disk using the ISO image**.
+4. Click **Start** to create the bootable USB drive with the operating system.
 
-Após a gravação, o pendrive estará pronto para ser utilizado em qualquer máquina capaz de inicializar a partir de dispositivos USB.
-
----
-
-### **4. Testando o Sistema Operacional**
-
-Após criar o pendrive inicializável, você pode:
-
-- **Testar no computador**: Reinicie o computador e entre na BIOS/UEFI para selecionar o pendrive como dispositivo de inicialização. O sistema operacional começará a rodar.
-
-- **Emular com FerroRaw**: Caso queira testar sem reiniciar a máquina, utilize o FerroRaw para emular o sistema operacional.
+After writing, the USB drive will be ready to be used on any machine capable of booting from USB devices.
 
 ---
 
-## 🧑‍💻 **Objetivo do Projeto**
+### 4. Testing the Operating System
 
-Este projeto tem como objetivo proporcionar:
+After creating the bootable USB drive, you can:
 
-- **Aprendizado de baixo nível**: Programação em Assembly, uma linguagem de baixo nível que interage diretamente com o hardware.
-- **Desenvolvimento de sistemas operacionais**: Aprofundar o entendimento sobre como os sistemas operacionais funcionam e são estruturados.
-- **Treinamento de habilidades práticas**: A experiência prática de criar, testar e depurar um sistema operacional no ambiente real e virtual.
+- **Test on a computer**: Restart the computer and enter the BIOS/UEFI to select the USB drive as the boot device. The operating system will start running.
+
+- **Emulate with FerroRaw**: If you want to test without restarting your machine, use FerroRaw to emulate the operating system.
 
 ---
 
-## 💡 **Conclusão**
+## Project Goals
 
-Ao longo do desenvolvimento deste sistema operacional em Assembly, você obterá uma compreensão única dos componentes internos de um sistema operacional e de como as interações de baixo nível entre o software e o hardware acontecem. O uso de ferramentas como o **NASM**, **Rufus** e **FerroRaw** permitirá que você vivencie a criação e o teste de um sistema operacional real em um pendrive, o que pode ser útil para experimentação, aprendizado e desenvolvimento de habilidades avançadas em programação de sistemas.
+This project aims to provide:
+
+- **Low-level learning**: Programming in Assembly, a low-level language that interacts directly with hardware.
+- **Operating system development**: A deeper understanding of how operating systems work and are structured.
+- **Practical skill training**: The hands-on experience of creating, testing, and debugging an operating system in both real and virtual environments.
+
+---
+
+## Conclusion
+
+Throughout the development of this operating system in Assembly, you will gain a unique understanding of the internal components of an operating system and how low-level interactions between software and hardware occur. Using tools like **NASM**, **Rufus**, and **FerroRaw** will allow you to experience the creation and testing of a real operating system on a USB drive, which can be useful for experimentation, learning, and developing advanced skills in systems programming.
+
+---
+
+[Read in English](#readme---development-of-an-operating-system-in-assembly-for-usb-drive) | [Leia em Português](#readme---desenvolvimento-de-um-sistema-operacional-em-assembly-para-pendrive)
+
