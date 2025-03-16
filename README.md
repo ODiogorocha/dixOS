@@ -1,7 +1,5 @@
 # [README] Desenvolvimento de um Sistema Operacional em Assembly para Pendrive
 
-[Leia em Português](#readme---desenvolvimento-de-um-sistema-operacional-em-assembly-para-pendrive) | [Read in English](#readme---development-of-an-operating-system-in-assembly-for-usb-drive)
-
 ## Visão Geral
 Este projeto tem como objetivo desenvolver um sistema operacional simples em **Assembly**, que será carregado diretamente em um **pendrive**. O processo de criação permite treinamento em programação, com foco na arquitetura de sistemas operacionais, e proporciona um entendimento aprofundado da interação entre hardware e software em baixo nível.
 
