@@ -12,15 +12,37 @@ NameSystem db "DixOS", 0
 
 
 ;window configuration
-BackWidth dw 0000h
+BackWidth  dw 0000h
 BackHeigth dw 0000h
-BackColor db 46
+BackColor  db 46
 Pagination db 0 
-cursorX db 15
-CursorY db 12
-stats db 0
+cursorX    db 15
+CursorY    db 12
+Stats      db 0
+Key        db 0
+count      dw 0
 
 ;rotim library 
+;define modo de video e configuracao padrao
+
+VGA.SetVideoMode:
+    mov ah, 00h 
+    mov al, 13h
+    int 10h
+    mov ax, 320
+    mov WORD[BackWidth], ax
+    mov ax, 200
+    mov WORD[BackHeigth], ax
+    call DrawPixelConfig
+ret
+
+;fucao grava pixel na tela
+DrawPixelConfig:
+    mov ah, 0Ch
+    mov al, [BackColor]
+    mov cx, 0
+    mov dx, 0
+ret
 
 
 
