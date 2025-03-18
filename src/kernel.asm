@@ -3,29 +3,21 @@
 
 jmp OSMain
 
-BackWidth db 0
-BackHeigt db 0
-Pagination db 0
-Welcome db "Bem-vindo ao DixOS !",0
+;diretivas e inclusoes
+
+
+
+
+
+ 
+;start sistem
 
 OSMain:
 	call ConfigSegment
 	call ConfigStack
-	call TEXT.SetVideoMode
-	call BackColor
-	jmp ShowString
 
 
-ShowString:
-	mov dh, 3
-	mov dl, 2
-	call MoveCursor
-	mov si, Welcome
-	call PrintString
-	mov ah, 00
-	int 16h
-	jmp END
-	
+;funcoes de kernel
 ConfigSegment:
 	mov ax, es
 	mov ds, ax
@@ -37,25 +29,8 @@ ConfigStack:
 	mov sp, 03FEh
 ret
 
-TEXT.SetVideoMode:
-	mov ah, 00h
-	mov al, 03h
-	int 10h
-	mov BYTE[BackWidth], 80 ;80 linhas tela
-	mov BYTE[BackHeigt], 20 ;20 colunas tela
-ret
-
-BackColor:
-	mov ah, 06h
-	mov al, 0
-	mov bh, 0001_1111b
-	mov ch, 0
-	mov cl, 0
-	mov dh, 5
-	mov dl, 80
-	int 10h
-ret
-
+END:
+	int 19h
 
 
 PrintString:
@@ -82,5 +57,3 @@ MoveCursor:
 	int 10h
 ret
 
-END:
-	int 19h

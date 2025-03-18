@@ -1,0 +1,27 @@
+;------------------------------------------
+;DixOS - rotina da biblioteca de monitor 
+;versao - 1.0.0
+;-------------------------------------------
+
+%IFINDEF __MONITOR_LIB__
+%DEFINE __MONITOR_LIB__
+
+;MAIN STRINGS 
+
+NameSystem db "DixOS", 0
+
+
+;window configuration
+BackWidth dw 0000h
+BackHeigth dw 0000h
+BackColor db 46
+Pagination db 0 
+cursorX db 15
+CursorY db 12
+stats db 0
+
+;rotim library 
+
+
+
+%ENDIF
